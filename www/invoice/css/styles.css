@@ -1,0 +1,16 @@
+.container {
+  width: 500px !important;
+}
+
+.v-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-stack {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.product {}
