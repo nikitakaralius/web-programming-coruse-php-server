@@ -1,0 +1,128 @@
+@keyframes n-move {
+  0% {
+    transform: scale(0.4, 0.4);
+  }
+  50% {
+    transform: scale(0.5, 0.5) translate(140%, 20%);
+  }
+  100% {
+    transform: scale(1, 1) translate(10%, 20%);
+
+  }
+}
+
+@keyframes k-move {
+  0% {
+    transform: scale(0.4, 0.4) translate(200%, 200%);
+  }
+  50% {
+    transform: scale(0.5, 0.5) translate(20%, 140%);;
+  }
+  100% {
+    transform: scale(1, 1) translate(45%, 30%);
+  }
+}
+
+@keyframes outline-move {
+  0% {
+    opacity: 1;
+    offset-distance: 0;
+  }
+  90% {
+    opacity: 1;
+    offset-distance: 100%;
+  }
+  100% {
+    opacity: 0;
+    offset-distance: 100%;
+  }
+}
+
+@keyframes rotate-and-hide-letters {
+  0% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes show-popup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+#logo-container {}
+
+#n-letter {
+  transform: scale(0.4, 0.4);
+}
+
+#k-letter {
+  transform: scale(0.4, 0.4) translate(200%, 200%);
+}
+
+#logo-container:hover #k-letter {
+  animation: k-move 1s linear normal forwards;
+}
+
+#logo-container:hover #n-letter {
+  animation: n-move 1s linear normal forwards;
+}
+
+#rect, #circle {
+  opacity: 0;
+}
+
+#logo-container:active #rect {
+  offset-path: path('M10,90 L10,10 L30,10 L70,70 L70,10 L90,10 L90,90 L70,90 L65,90 L30,40 L30,90 Z');
+  animation: outline-move 2s linear normal forwards;
+}
+
+#logo-container:active #circle {
+  offset-path: path('M10,90 L10,10 L30,10 L30,45 L70,10 L90,10 L50,50 L90,90 L70,90 L30,55 L30,90 Z');
+  animation: outline-move 2s linear normal forwards;
+}
+
+#n-letter-path,
+#k-letter-path {
+  transform-origin: 25% 25%;
+}
+
+#popup {
+  opacity: 0;
+}
+
+#logo-container:active #n-letter-path,
+#logo-container:active #k-letter-path {
+  animation: rotate-and-hide-letters 2s 2s linear normal forwards;
+}
+
+#logo-container:active #popup {
+  animation: show-popup 1s 4s linear normal forwards;
+}
+
+#logo-container:active {
+  animation: pulse 2s 4.2s linear infinite normal forwards;
+}

@@ -1,0 +1,273 @@
+body {
+  background-color: var(--background);
+
+  --scale: 2;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.drawing {
+  height: calc(400px * var(--scale));
+  width: calc(400px * var(--scale));
+  font-size: calc(1rem * var(--scale));
+  background: linear-gradient(130deg, #e4c47c, #eaebe5);
+  overflow: hidden;
+
+  display: grid;
+  grid-template-rows: 30% 35%;
+}
+
+.ground {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(110deg, #458738, #e5ede9 20%, #458738);
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sun {
+  width: 10em;
+  height: 10em;
+  background: #d6aa52;
+  border-radius: 50%;
+  position: relative;
+  left: -3em;
+  top: -3em;
+}
+
+.grass-line {
+  margin-top: auto;
+  position: relative;
+  bottom: -0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.8em;
+  align-items: stretch;
+  height: 2em;
+}
+
+.grass {
+  height: 100%;
+  border: 0.43em solid green;
+  border-radius: 50%;
+  flex: 1;
+}
+
+.dog {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  top: 2em;
+}
+
+.dog-body {
+  width: 7.5em;
+  height: 6em;
+  background: saddlebrown;
+  border-radius: 50%;
+  border: 0.1em solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-head {
+  width: 6em;
+  height: 7.3em;
+  border-radius: 50%;
+  background: saddlebrown;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.1em solid black;
+}
+
+
+.dog-eye-line {
+  display: flex;
+  justify-content: center;
+  gap: 0.4em;
+  position: relative;
+  top: 2em;
+}
+
+.dog-eye-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dog-eye {
+  width: 1.7em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dog-pupil {
+  width: 1.3em;
+  height: 1.8em;
+  border-radius: 50%;
+  background: #212526;
+  position: relative;
+  top: 0.6em;
+  right: 0.1em;
+}
+
+.dog-eyebrow {
+  position: relative;
+  width: 2.1em;
+  height: 1em;
+  border-radius: 56%;
+  box-shadow: 0 0.4em 0 #212526;
+  margin-bottom: -1em;
+}
+
+.dog-eyebrow-left {
+  transform: rotate(-200deg);
+}
+
+.dog-eyebrow-right {
+  transform: rotate(200deg);
+}
+
+.dog-cheeks {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 1em;
+  right: 1.3em;
+}
+
+.dog-cheek {
+  width: 2.4em;
+  height: 3em;
+  background: saddlebrown;
+  border-radius: 55%;
+  border: 0.1em solid black;
+  margin-left: -0.4em;
+  margin-right: -0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dog-nose {
+  width: 2.1em;
+  height: 3em;
+  background: black;
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  position: relative;
+  top: 2.5em;
+  right: 0.3em;
+  z-index: 1;
+}
+
+.dog-paws {
+  display: flex;
+  margin-top: auto;
+  position: relative;
+  top: 0.8em;
+  gap: 0.1em;
+}
+
+.dog-paw {
+  width: 2.3em;
+  height: 3em;
+  border-radius: 40%;
+  background: saddlebrown;
+  border: 0.1em solid black;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 0.2em;
+}
+
+.dog-paw-cheek {
+  z-index: 0;
+  position: relative;
+  top: 1em;
+  left: 0.3em;
+}
+
+.dog-claw {
+  width: 0.2em;
+  background: black;
+  border-radius: 20%;
+}
+
+.dog-claw:nth-child(1) {
+  height: 0.6em;
+}
+
+.dog-claw:nth-child(2) {
+  height: 0.7em;
+}
+
+.dog-claw:nth-child(3) {
+  height: 0.8em;
+}
+
+.dog-ears {
+  display: flex;
+  gap: 1.5em;
+  position: relative;
+  top: 2em;
+}
+
+.dog-ear {
+  width: 2.3em;
+  height: 2.5em;
+  border-radius: 45%;
+  background: saddlebrown;
+  border: 0.1em solid black;
+}
+
+.dog-head-container {
+  left: 2em;
+  bottom: 1.3em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-tail {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  box-shadow: 0 0.35em 0 saddlebrown;
+  transform: rotate(-45deg);
+  right: 2.3em;
+  bottom: 4em;
+}
+
+footer {
+  padding: 20px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    --scale: 1;
+  }
+}

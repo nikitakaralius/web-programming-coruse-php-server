@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Слова</title>
+  <link rel="stylesheet" href="../main/css/header.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="./js/script.js" defer></script>
+</head>
+<body>
+<header>
+  <nav>
+    <ul class="nav-list nav-list-mobile">
+      <li class="nav-item">
+        <div class="mobile-menu">
+          <span class="line line-top"></span>
+          <span class="line line-bottom"></span>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="../index.php" class="nav-link nav-link-logo">NK</a>
+      </li>
+      <li class="nav-item">
+        <div class="theme-toggle-2"></div>
+      </li>
+    </ul>
+    <ul class="nav-list nav-list-larger">
+      <li class="nav-item nav-item-hidden">
+        <a href="../index.php" class="nav-link nav-link-logo">NK</a>
+      </li>
+      <li class="nav-item">
+        <div class="theme-toggle-2"></div>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div id="root">
+  <div class="container">
+    <div
+      id="drag-and-drop-section"
+      class="outlined"
+      ondragover="onDragOver(event)"
+      ondrop="onDrop(event)"
+    >
+    </div>
+    <div class="main-layout">
+      <div
+        id="display-words-section"
+        class="outlined"
+        ondragover="onDragOver(event)"
+        ondrop="onDrop(event)"
+      >
+      </div>
+      <div
+        id="input-wrapper"
+        class="outlined"
+      >
+        <div class="form-section">
+          <label for="text-input"></label>
+          <input
+            class="form-element"
+            type="text"
+            id="text-input"
+            placeholder="Введите свой текст здесь"
+          >
+          <button
+            class="form-element"
+            type="button"
+            onclick="onDisassembleButtonClicked()"
+          >
+            Разобрать
+          </button>
+        </div>
+        <div id="text-display"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  Built by @nikitakaralius. The source code is available on <a href="https://github.com/nikitakaralius">GitHub</a>.
+</footer>
+</body>
+</html>

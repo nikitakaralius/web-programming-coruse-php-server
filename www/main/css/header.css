@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'San Francisco', sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 1024;
+  background: var(--background-blur);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 10px;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+  justify-content: space-between;
+}
+
+.nav-list-mobile {
+  display: none;
+}
+
+.nav-link {
+  color: var(--muted-foreground);
+  transition: 0.2s ease-in-out;
+  padding: 0 1rem;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link-active {
+  color: var(--primary) !important;
+  transform: scale(1.1);
+}
+
+.nav-link-logo {
+  width: 40px;
+  height: 40px;
+  align-content: center;
+}
+
+.theme-toggle {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: var(--primary);
+  -webkit-mask: url("./../img/navbar/theme-toggle.svg") center no-repeat;
+  mask: url("./../img/navbar/theme-toggle.svg") center no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    scroll-behavior: auto;
+  }
+
+  header {
+    transition: background 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
+    height 0.56s cubic-bezier(0.32, 0.08, 0.24, 1);
+  }
+
+  .nav-list {
+    margin-top: 0;
+  }
+
+  .nav-list-larger {
+    display: none;
+  }
+
+  .nav-list-mobile {
+    display: flex;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-item-hidden {
+    display: none;
+  }
+
+  .theme-toggle {
+    z-index: 4096;
+  }
+
+  .mobile-menu {
+    position: relative;
+    z-index: 4096;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .mobile-menu::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: -30px;
+    bottom: -15px;
+    left: -10px;
+    z-index: 4096;
+  }
+
+  .line {
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    background-color: var(--primary);
+    transition: margin-top .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  }
+
+  .line-top {
+    margin-top: 3px;
+  }
+
+  .line-bottom {
+    margin-top: -.4rem;
+  }
+
+  .active .line-top {
+    margin-top: 0;
+    transform: rotate(45deg);
+    transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  }
+
+  .active .line-bottom {
+    margin-top: 0;
+    transform: rotate(-45deg);
+    transition: transform .3192s .1s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  }
+
+  header.active {
+    height: 100%;
+    background-color: var(--background);
+  }
+
+  .nav-link-logo {
+    position: relative;
+    z-index: 4096;
+  }
+
+  .nav-list-larger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    display: block;
+    padding: 100px 20px;
+    z-index: 2048;
+    box-sizing: border-box;
+    transition: opacity 0.3s;
+    opacity: 0;
+    font-size: 18px;
+    visibility: hidden;
+  }
+
+  .active .nav-list-larger {
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list-larger .nav-item {
+    width: 100%;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--border);
+    margin-top: 18px;
+  }
+
+  .nav-list-larger .nav-item:nth-child(5) {
+    border-bottom: none
+  }
+
+  .active .nav-list-larger .nav-item {
+    animation: fadeIn 1s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+footer {
+  padding: 20px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+
+footer a {
+  display: inline;
+  color: var(--chart-2);
+}

@@ -1,0 +1,53 @@
+<svg
+  id="logo-container"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 200 200"
+  width="200"
+  height="200"
+>
+  <style>
+    @import url(../css/personal-brand-logo.css);
+  </style>
+
+  <g id="n-letter">
+    <path
+      id="n-letter-path"
+      d="M10,90 L10,10 L30,10 L70,70 L70,10 L90,10 L90,90 L70,90 L65,90 L30,40 L30,90 Z"
+      fill="cyan"
+      stroke="black"
+      stroke-width="4"
+    />
+
+    <rect
+      id="rect"
+      width="12"
+      height="12"
+      fill="green"
+      stroke="black"
+      stroke-width="3"
+    />
+  </g>
+
+  <g id="k-letter">
+    <path
+      id="k-letter-path"
+      d="M10,90 L10,10 L30,10 L30,45 L70,10 L90,10 L50,50 L90,90 L70,90 L30,55 L30,90 Z"
+      fill="indigo"
+      stroke="black"
+      stroke-width="4"
+    />
+    <circle
+      id="circle"
+      r="5"
+      fill="green"
+      stroke="black"
+      stroke-width="3"
+    />
+  </g>
+
+  <g id="popup">
+    <image href="./georgia.jpeg" width="200"/>
+    <text x="55" y="100" fill="red">Сингахи</text>
+  </g>
+
+</svg>
