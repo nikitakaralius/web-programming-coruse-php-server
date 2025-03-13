@@ -35,7 +35,7 @@ $colors = [
 </head>
 <body>
 <h1>Оформление заказа</h1>
-<form action="process.php" method="post" enctype="multipart/form-data" class="container v-stack">
+<form action="invoiceBuilder.php" method="post" enctype="multipart/form-data" class="container v-stack">
   <label for="lastName">Фамилия:</label>
   <input type="text" name="lastName" id="lastName" required>
 
